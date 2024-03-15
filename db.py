@@ -47,4 +47,4 @@ def check_user():
 			return False, ""
 		else:
 			return True, user_data["name"], user_data["token"]
-		
+
