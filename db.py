@@ -5,7 +5,7 @@ from flask import request
 
 
 
-client = pymongo.MongoClient('mongodb://127.0.0.1:27017/')
+client = pymongo.MongoClient('mongodb+srv://sharankumarshetty48:x5bkFICQFbNw4gTJ@shancluster1.gnxcpx9.mongodb.net/?retryWrites=true&w=majority&appName=shancluster1')
 userdb = client['devops']
 users = userdb.user
 
@@ -44,7 +44,7 @@ def check_user():
 
 		user_data = users.find_one(user)
 		if user_data is None:
-			return False, ""
+			return False, "", ""
 		else:
 			return True, user_data["name"], user_data["token"]
 
